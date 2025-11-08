@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ABOUT US</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="StylesAbout.css">
+        <link rel="icon" type="image/x-icon" href="website icon.png">
+    </head>
+    <body>
+        <!--navigation bar-->
+        <div class = "main-content">
+        <div class="header-image">
+            <div id="header">
+                <h1>ABOUT US</h1>
+            </div>
+        </div>
+
+        <nav id="navigation">
+      <div class="logo">
+        <a href="HOMEPAGE.html"><span>TAMTECH</span></a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="FEUR.html"><span class="firsttext">FEUR EVENTS</span></a></li>
+        <li><a href="NSTP.html"><span class="firsttext">NSTP EVENTS</span></a></li>
+        <li><a href="PURPOSIVE.html"><span class="firsttext">PURPOSIVE COMMUNICATION</span></a></li>
+        <li><a href="Pathfit.html"><span class="firsttext">PATHFIT ACTIVITIES</span></a></li>
+        <li><a href="Product.html"><span class="firsttext">PRODUCT SHOWCASE</span></a></li>
+        <li><a href="About Us.html"><span class="firsttext">ABOUT US</span></a></li>
+      </ul>
+    </nav>
+
+     <div class="carousel-container">
+  <div class="member-card" id="member-card"></div>
+  <div class="arrow-group">
+    <button class="arrow left" onclick="prevMember()">&#10094;</button>
+    <button class="arrow right" onclick="nextMember()">&#10095;</button>
+  </div>
+</div>
+
+<div class="floating-bg">
+  <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
+  <div class="bubble" style="left: 30%; animation-delay: 2s;"></div>
+  <div class="bubble" style="left: 50%; animation-delay: 4s;"></div>
+  <div class="bubble" style="left: 70%; animation-delay: 6s;"></div>
+  <div class="bubble" style="left: 90%; animation-delay: 8s;"></div>
+</div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="HOMEPAGE.html" class="links">Home</a>
+    <a href="About Us.html" class="links">About Us</a>
+    <a href="contact us.html" class="links">Contact Us</a>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function toggleMenu() {
+      const navList = document.getElementById('nav-links');
+      if (navList) navList.classList.toggle('active');
+    }
+
+  let currentIndex = 0;
+  const members = [
+    { name: "TAMTECH", role: "Developer", bio: "Group of IT students", img: "homepage_sketch.png" },
+    { name: "Lance", role: "", Funfact: "Hi! I’m Lance Miguel A. Ramos, but you can just call me Lance. I’m currently studying Bachelor of Science in Information Technology at FEU Roosevelt Marikina. I’ve been cooking for about six years now. I started learning when I was 12 years old because my parents were always busy with work, and I didn’t want them to worry about me when they got home. Eventually, cooking became my way of showing love and care for the people around me. I also enjoy baking! I’m still learning, though I’ve been watching videos lately to pick up new tips and try out different recipes. After I bake, I always share what I make with my siblings and parents. Seeing them enjoy my food makes me really happy. Aside from cooking and baking, I also like watching movies and playing games during my free time. Since I’m an IT student, I find it fun to see how technology plays a big role in gaming and even in the digital content I watch. It inspires me to learn more about how tech connects to everyday things I enjoy.", img: "Lance-aboutus.jpg" },
+    { name: "Ann", role: "Main Character", Funfact: "The name's Gabrielle Ann P. Calderon, you can call me Ann! I am an artist who's currently a Bachelor of Science in Information and Technology student at FEU Roosevelt Marikina. I've been an artist for almost 9 years. I've always loved being able to create artworks that express my emotions and my mind, even if it's merely for the aesthetics. I started my journey here as an IT student this year. The first semester allowed me to grow even more as a person. I'm more confident about expressing my ideas than i was before, though I still get too nervous from time to time. In my spare time, I like to create new artworks, watch movies, and sometimes I even play online games as a way to hang out and catch up with my friends. Also, I can perform a full 360-degree twist with my hand! ", img: "Ann-aboutus.jpg" },
+    { name: "Claire", role: "Developer", bio: "Loves To Take Pictures", img: "claire-aboutus.jpg" },
+    { name: "Lui", role: "Asset", Funfact:"I’m Lui Andre Ortega, a Bachelor of Science in Information Technology student. I’ve always been passionate about gaming, whether it’s the thrill of fast-paced FPS matches, the emotional depth of solo story games, or the realistic driving experience of car simulators. Gaming lets me explore different worlds and challenges, which inspires my curiosity in technology and design. Outside the screen, I love cycling, it’s my way to relax, clear my mind, and enjoy the outdoors. I’m also a big fan of Formula 1, especially cheering for Red Bull Racing and my favorite driver, Max Verstappen. In esports, I look up to Faker from T1 for his skill, discipline, and legacy in gaming. And when it comes to music, Tyler, the Creator is one of my top inspirations. I really enjoy his creativity and unique style. All these interests keep me motivated, inspired, and always excited to learn new things both in and out of IT", img: "lui-aboutus.jpg" },
+    { name: "Thomas", role: "Developer", bio: "Loves To Take Pictures Loves To Take Pictures Loves To Take Pictures...", img: "Thomas-aboutus.jpg" }
+  ];
+
+  const visibilityStates = new Array(members.length).fill(false);
+
+function updateCard() {
+  const container = document.querySelector('.carousel-container');
+  const card = document.getElementById("member-card");
+  card.style.opacity = 0;
+
+  setTimeout(() => {
+    const member = members[currentIndex];
+    const isVisible = visibilityStates[currentIndex];
+
+    card.innerHTML = `
+      <img src="${member.img}" alt="${member.name}">
+      <div class="member-info ${isVisible ? "visible" : ""}">
+        <h3>${member.name}</h3>
+        <p>${member.role}</p>
+        <p>${member.Funfact}</p>
+      </div>
+    `;
+
+    // Create button outside the card
+    let existingBtn = document.querySelector('.toggle-btn');
+    if (existingBtn) existingBtn.remove();
+
+    const button = document.createElement('button');
+    button.className = 'toggle-btn';
+    button.textContent = isVisible ? "Hide Info" : "Show Info";
+    container.insertBefore(button, card);
+
+    const info = card.querySelector('.member-info');
+
+    button.addEventListener('click', () => {
+      visibilityStates[currentIndex] = !visibilityStates[currentIndex];
+      info.classList.toggle('visible');
+      button.textContent = info.classList.contains('visible') ? "Hide Info" : "Show Info";
+    });
+
+    card.style.opacity = 1;
+  }, 300);
+}
+
+
+  function nextMember() {
+    currentIndex = (currentIndex + 1) % members.length;
+    updateCard();
+  }
+
+  function prevMember() {
+    currentIndex = (currentIndex - 1 + members.length) % members.length;
+    updateCard();
+  }
+
+  window.onload = updateCard;
+  </script>
+</body>
+</html>
