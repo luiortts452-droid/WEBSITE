@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PRODUCT</title>
+        <link rel="stylesheet" href="StylesFEUR.css">
+        <link rel="icon" type="image/x-icon" href="c:\Users\HP\OneDrive\Documents\1ST YEAR\website icon.png">
+    </head>
+    <body>
+        <!--navigation bar-->
+       
+        <div class="header-image">
+            <div id="header">
+                <h1>PRODUCT</h1>
+            </div>
+        </div>
+
+        <nav id="navigation">
+            <div class="logo">
+                <a href="HOMEPAGE.html">
+                
+                        <span>🏚️</span>
+                </a>
+            </div>
+            <ul>
+                <li>
+                    <a href="Product.html">
+                        <span class="firsttext">PRODUCT SHOWCASE</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="About Us.html">
+                        <span class="firsttext">LEARN ABOUT US</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="Pathfit.html">
+                        <span class="firsttext">PATHFIT ACTIVITIES</span>
+                    </a>
+                </li> 
+                <li>
+                    <a href="PURPOSIVE.html">
+                        <span class="firsttext">PURPOSIVE COMMUNICATION</span>
+                    </a>
+                </li> 
+                <li>
+                    <a href="NSTP.html">
+                        <span class="firsttext">NSTP EVENTS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="FEUR.html">
+                        <span class="firsttext">FEUR EVENTS</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+    
+
+  <style>
+     .main-image {
+     display: flex;
+     justify-content: center;
+     margin-bottom: 30px;
+}
+     .main-image img {
+     width: 100%;
+     max-width: 300px;
+     border-radius: 30px;
+     transition: 0.3s ease-in-out;
+}
+     .main-image img:hover {
+     transform: scale(1.02);
+}
+    .container {
+      max-width: 1000px;
+      margin: 50px auto;
+      background: #cccccc;
+      padding: 50px;
+      border-radius: 50px;
+    }
+    .thumbs {
+      display: flex;
+      gap: 50px;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .thumbs img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: 0.2s;
+    }
+    .thumbs img:hover {
+      transform: scale(1.05);
+    }
+    .thumbs img.active {
+      border-color: #052d9c;
+    }
+    .info {
+      margin-top: 20px;
+    }
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #078d70;
+    }
+    .info p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    button {
+      margin-top: 20px;
+      padding: 15px 25px;
+      border: none;
+      background: #c2f183;
+      color: #030303;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #0056c9;
+    }
+  .add-to-cart {
+  position: relative;
+  overflow: hidden;
+}
+
+.add-to-cart .heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.added-text {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: #078d70;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 3;
+}
+
+.add-to-cart.clicked .added-text {
+  opacity: 1;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="main-image">
+      <img id="mainDisplay" src="perfume1.WEBP" alt="Main Product Image">
+    </div>
+
+    <div class="thumbs" id="thumbs">
+      <img src="perfume1.WEBP" data-index="0" class="active">
+      <img src="perfume2.WEBP" data-index="1">
+      <img src="perfume3.jpg" data-index="2">
+    </div>
+
+    <div class="info">
+      <h2>Luxury Perfume Collection</h2>
+      <p class="price">₱1,000,000.00</p>
+      <p>Perfume Example only</p>
+      <p>
+        <strong>Lacoste Red</strong> – A fresh burst of apple and cedar, energizing and confident — perfect for the active man.<br><br>
+        <strong>Ferrari Red</strong> – Bold and dynamic with spicy citrus and wood notes, embodying pure speed and passion.<br><br>
+        <strong>Polo Red</strong> – Seductive and powerful, blending red saffron, coffee, and amber for an irresistible drive.
+      </p>
+      <button class="add-to-cart">
+  <span>Add to cart</span>
+  <div class="heart">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="red">
+      <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 
+               2 5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 2.09 
+               C13.09 4.01 14.76 3 16.5 3 
+               19.58 3 22 5.42 22 8.5 
+               c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+    </svg>
+  </div>
+  <span class="added-text">Added!</span>
+</button>
+  </div>
+  </div>
+<div class="footer">
+          <a href="HOMEPAGE.html" class="links">Home</a>
+          <a href="About Us.html" class="links">About Us</a>
+          <a href="contact us.html" class="links">Contact Us</a>
+    </div>
+
+  <script>
+    const addToCartBtn = document.querySelector('.add-to-cart');
+const heart = addToCartBtn.querySelector('.heart');
+const addedText = addToCartBtn.querySelector('.added-text');
+
+addToCartBtn.addEventListener('click', () => {
+  heart.style.animation = 'pulse 0.6s ease forwards';
+  addToCartBtn.classList.add('clicked');
+
+  setTimeout(() => {
+    heart.style.animation = 'none';
+    addToCartBtn.classList.remove('clicked');
+  }, 1000);
+});
+    const mainDisplay = document.getElementById('mainDisplay');
+    const thumbs = document.querySelectorAll('.thumbs img');
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', () => {
+        mainDisplay.src = thumb.src;
+        thumbs.forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
