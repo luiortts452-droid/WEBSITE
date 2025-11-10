@@ -166,6 +166,50 @@ html, body {
   }
 }
 
+.info-text {
+  text-align: center; /* centers everything inside */
+}
+
+.click-me {
+  display: inline-block; /* behaves like text */
+  margin-top: 30px;      /* spacing from text */
+  position: relative;
+}
+
+.click-me button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 16px;
+  font-weight: 600;
+  background: #c2f183;
+  color: #030303;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.click-me button:hover {
+  background: #0056c9;
+}
+
+.click-me .heart {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0;
+  width: 50px;
+  height: 40px;
+  animation: none;
+}
+
+.click-me:active .heart {
+  animation: pulse 0.6s ease forwards;
+}
+
 @media (max-width: 768px) {
   .contact-info {
     flex-direction: column;
