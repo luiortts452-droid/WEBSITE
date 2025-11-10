@@ -127,47 +127,7 @@ html, body {
 }
 
 /*Content Block*/
-.content-block {
-	width: 100%;
-	max-width: 800px;
-	background-color: #a1aa8e;
-	margin: 20px auto;
-	padding: 15px;
-	border-radius: 10px;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	text-align: center;
-	overflow: hidden;
-	margin-bottom: 60px;
-}
 
-.content-block img {
-	width: 100%;
-	height: auto;
-	border-radius: 6px;
-}
-
-.heading-dramatic h2,
-.description h2 {
-	font-family: 'Denk One', sans-serif;
-	font-size: 30px;
-	color: #1a221a;
-	margin-top: 0;
-}
-
-.description p {
-	margin: 5px 0;
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-}
-
-.description p2 {
-	display: block;
-	margin: 10px 0;
-	font-size: 15px;
-	font-family: Arial, Helvetica, sans-serif;
-	text-align: justify;
-}
 
 /*Footer*/
 .footer {
