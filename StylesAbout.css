@@ -13,7 +13,7 @@ html, body {
 }
 
 .header-image {
-  background-image: url("header.png");
+  background-image: url("images/header.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

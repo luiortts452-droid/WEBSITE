@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TAMTECH MOMENTS</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="StylesMoments.css">
+  <link rel="icon" type="image/x-icon" href="images/website icon.png">
+</head>
+<body>
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header-image">
+      <div id="header">
+        <h1>TAMTECH MOMENTS</h1>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="navigation">
+      <div class="logo">
+        <a href="HOMEPAGE.html"><span>TAMTECH</span></a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="FEUR.html"><span class="firsttext">FEUR EVENTS</span></a></li>
+        <li><a href="NSTP.html"><span class="firsttext">NSTP EVENTS</span></a></li>
+        <li><a href="PURPOSIVE.html"><span class="firsttext">PURPOSIVE COMMUNICATION</span></a></li>
+        <li><a href="Pathfit.html"><span class="firsttext">PATHFIT ACTIVITIES</span></a></li>
+        <li><a href="Moments.html"><span class="firsttext">TAMTECH MOMENTS</span></a></li>
+        <li><a href="About Us.html"><span class="firsttext">LEARN ABOUT US</span></a></li>
+      </ul>
+    </nav>
+
+    <!--CONTENTS-->
+    <div class="">
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <a href="HOMEPAGE.html" class="links">Home</a>
+      <a href="About Us.html" class="links">About Us</a>
+      <a href="contact us.html" class="links">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMenu() {
+      const navList = document.getElementById('nav-links');
+      if (navList) navList.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
