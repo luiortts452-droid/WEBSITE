@@ -109,6 +109,9 @@ html, body {
 }
 
 /*Layout*/
+.figcaption {
+  margin-top: 0;
+}
 .page-layout {
   display: flex;
   flex-wrap: wrap;
