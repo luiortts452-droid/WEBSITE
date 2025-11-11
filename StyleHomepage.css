@@ -77,7 +77,7 @@ html, body {
   align-items: center;
   background-color: #1a221a;
   list-style-type: none;
-  padding-left: 10px;
+  padding-left: 80px;
   border-radius: 50px;
   transition: max-height 0.3s ease;
   overflow: hidden;

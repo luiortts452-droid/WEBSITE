@@ -12,6 +12,19 @@ html, body {
 	background-color: #4f5a50;
 }
 
+body {
+	background-image:
+		repeating-linear-gradient(to right, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size)),
+    	repeating-linear-gradient(to bottom, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size));
+	background-blend-mode: overlay;
+}
+
+:root {
+	--grid-size: 40px;
+	--grid-color: rgba(53, 95, 52, 0.552);
+    --grid-accent: rgba(255,255,255,0.06);
+}
+
 .main-content {
 	flex: 1;
 }
@@ -23,18 +36,19 @@ html, body {
 	background-position: center;
 	background-repeat: no-repeat;
 	width: 100%;
-	height: 90px;
-	margin: 10px 0 20px;
+	height: 150px;
+	margin: 0 0;
 }
 
 .header-image h1 {
 	font-size: 80px;
 	font-weight: bold;
 	text-align: center;
-	color: #293529;
+	color: #dee762;
 	margin: 0;
 	padding: 0;
-	text-shadow: 0 0 10px rgba(5, 5, 5, 0.822);
+	padding-top: 30px;
+	text-shadow: 0 0 10px rgba(229, 255, 0, 0.822);
 }
 
 /*Navigation*/
@@ -120,14 +134,113 @@ html, body {
 	padding: 20px;
 }
 
-.main-column {
-	flex: 1 1 700px;
-	max-width: 800px;
-	width: 100%;
+/*Collage*/
+.collage {
+	max-width: 2000px;
+	margin-inline: auto;
+	display: grid;
+	gap: 0.5rem;
+	grid-template-rows: repeat(21, 1fr);
+	grid-template-columns: repeat(14, 1fr);
+	margin-top: 50px;
+
+	grid-template-areas: 
+	".. ..    ..	   ..       two      two      two      two      two      three    three    three    ..     .."
+	".. ..    ..       ..       two      two      two      two      two      three    three    three    ..     .."
+	".. one   one      one      two      two      two      two      two      three    three    three    ..     .."
+	".. one   one      one      two      two      two      two      two      four     four     four     four   .."
+	".. one   one      one      two      two      two      two      two      four     four     four     four   .."
+	".. ..    five     five     five     five     six      six      six      four     four     four     four   .."
+	".. ..    five     five     five     five     six      six      six      four     four     four     four   .."
+	".. ..    five     five     five     five     six      six      six      nine     nine     nine     ..     .."
+	".. ..    five     five     five     five     eight    eight    eight    nine     nine     nine     ..     .."
+	".. seven seven    seven    seven    seven    eight    eight    eight    nine     nine     nine     ..     .."
+	".. seven seven    seven    seven    seven    eight    eight    eight    eleven   eleven   eleven   eleven .."
+	".. seven seven    seven    seven    seven    ten      ten      ten      eleven   eleven   eleven   eleven .."
+	".. seven seven    seven    seven    seven    ten      ten      ten      eleven   eleven   eleven   eleven .."
+	".. seven seven    seven    seven    seven    ten      ten      ten      eleven   eleven   eleven   eleven .."
+	".. ..    ..       twelve   twelve   twelve   fourteen fourteen fourteen fourteen fourteen fourteen ..     .."
+	".. ..    ..       twelve   twelve   twelve   fourteen fourteen fourteen fourteen fourteen fourteen ..     .."
+	".. ..    ..       twelve   twelve   twelve   fourteen fourteen fourteen fourteen fourteen fourteen ..     .."
+	".. ..    thirteen thirteen thirteen thirteen fourteen fourteen fourteen fourteen fourteen fourteen ..     .."
+	".. ..    thirteen thirteen thirteen thirteen fourteen fourteen fourteen fourteen fourteen fourteen ..     .."
+	".. ..    thirteen thirteen thirteen thirteen fourteen fourteen fourteen fourteen fourteen fourteen ..     .."
+	".. ..    thirteen thirteen thirteen thirteen ..       ..       ..       ..       ..       ..       ..     ..";
 }
 
-/*Content Block*/
+.collage > div {
+	overflow: hidden;
+	border-radius: 0.5rem;
+}
 
+.collage img {
+	width: 100%;
+	aspect-ratio: 1;
+	display: block;
+	object-fit: cover;
+	transition: all 0.3s ease-in-out;
+}
+
+.collage img:hover {
+	scale: 1.15;
+	rotate: 3deg;
+}
+
+.collage :nth-child(1) {
+	grid-area: one;
+}
+
+.collage :nth-child(2) {
+	grid-area: two;
+}
+
+.collage :nth-child(3) {
+	grid-area: three;
+}
+
+.collage :nth-child(4) {
+	grid-area: four;
+}
+
+.collage :nth-child(5) {
+	grid-area: five;
+}
+
+.collage :nth-child(6) {
+	grid-area: six;
+}
+
+.collage :nth-child(7) {
+	grid-area: seven;
+}
+
+.collage :nth-child(8) {
+	grid-area: eight;
+}
+
+.collage :nth-child(9) {
+	grid-area: nine;
+}
+
+.collage :nth-child(10) {
+	grid-area: ten;
+}
+
+.collage :nth-child(11) {
+	grid-area: eleven;
+}
+
+.collage :nth-child(12) {
+	grid-area: twelve;
+}
+
+.collage :nth-child(13) {
+	grid-area: thirteen;
+}
+
+.collage :nth-child(14) {
+	grid-area: fourteen;
+}
 
 /*Footer*/
 .footer {
@@ -162,8 +275,7 @@ html, body {
 		align-items: center;
 	}
 
-	.main-column,
-	.sidebar {
+	.collage {
 		width: 100%;
 		max-width: 90%;
 	}

@@ -18,23 +18,24 @@ html, body {
 
 /*Header*/
 .header-image {
-  background-image: url("header.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 90px;
-  margin: 10px 0 20px;
+	background-image: url("images/header.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 150px;
+	margin: 0 0;
 }
 
 .header-image h1 {
-  font-size: 80px;
-  font-weight: bold;
-  text-align: center;
-  color: #293529;
-  margin: 0;
-  padding: 0;
-  text-shadow: 0 0 10px rgba(5, 5, 5, 0.822);
+	font-size: 80px;
+	font-weight: bold;
+	text-align: center;
+	color: #dee762;
+	margin: 0;
+	padding: 0;
+	padding-top: 30px;
+	text-shadow: 0 0 10px rgba(229, 255, 0, 0.822);
 }
 
 /*Navigation*/
