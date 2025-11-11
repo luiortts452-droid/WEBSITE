@@ -18,7 +18,7 @@ html, body {
 
 /*Header*/
 .header-image {
-  background-image: url("header.png");
+  background-image: url("images/header.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -137,18 +137,12 @@ html, body {
 }
 
 /*Sidebar*/
-.rectangles,
-.gif-only {
+.rectangles {
   display: flex;
   flex-direction: column;
   width: 100%;
   padding: 10px;
   gap: 20px;
-}
-
-.gif-only {
-max-width: 300px;
-height: 250px;
 }
 
 .snippets {
@@ -188,11 +182,13 @@ height: 250px;
   text-align: center;
   margin: 20px 0 0;
 }
+
 .post {
   margin-bottom: 40px;
   position: relative;
   z-index: 1;
 } 
+
 .post-item {
   display: flex;
   align-items: center;
