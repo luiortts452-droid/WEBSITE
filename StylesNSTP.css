@@ -12,6 +12,19 @@ html, body {
   background-color: #4f5a50;
 }
 
+body {
+	background-image:
+		repeating-linear-gradient(to right, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size)),
+    	repeating-linear-gradient(to bottom, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size));
+	background-blend-mode: overlay;
+}
+
+:root {
+	--grid-size: 40px;
+	--grid-color: rgba(53, 95, 52, 0.552);
+    --grid-accent: rgba(255,255,255,0.06);
+}
+
 .main-content {
   flex: 1;
 }
@@ -133,35 +146,57 @@ html, body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   margin-top: 20px;
+  margin: 0 auto;
 }
+
+
 
 /*Sidebar*/
 .rectangles {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 10px;
-  gap: 20px;
+  align-items: center;
 }
 
 .snippets {
-  height: 250px;
-  padding: 5px;
-  font-size: 20px;
-  font-weight: 700;
-  border-radius: 5px;
   background-color: #a1aa8e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
   text-align: center;
-  flex-shrink: 0;
-  flex-grow: 0;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.snippets:hover {
-  background: #e2d391;
-  color: #4f5a50;
-  transform: scale(1.03);
+.snippets p2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.ad-image {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  max-height: 140px;       
+  object-fit: cover;      
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ad-image:hover {
+  transform: scale(1.05);
 }
 
 .picture-header,
