@@ -343,27 +343,6 @@ body {
 	font-size: 16px;
 	}
 
-	.content-block,
-	.sidebar,
-	.snippets,
-	.content-container {
-	width: 100%;
-	margin: 10px auto;
-	}
-
-	.content-block {
-	margin-bottom: 50px;
-	}
-	.gif-only,
-	.rectangles {
-	width: 100%;
-	padding: 10px;
-	}
-
-	.picture-header {
-	width: 100%;
-	font-size: 1.5rem;
-	}
 
 }
 

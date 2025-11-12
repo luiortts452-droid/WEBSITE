@@ -10,6 +10,20 @@ html, body {
   background-color: #4f5a50; 
 }
 
+body {
+	background-image:
+		repeating-linear-gradient(to right, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size)),
+    	repeating-linear-gradient(to bottom, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size));
+	background-blend-mode: overlay;
+}
+
+:root {
+	--grid-size: 40px;
+	--grid-color: rgba(53, 95, 52, 0.552);
+  --grid-accent: rgba(255,255,255,0.06);
+}
+
+
 .main-content {
   flex: 1;
 }
@@ -165,7 +179,6 @@ html, body {
 /*CONTACT US*/
 .contact {
   min-height: 100vh;
-  background-color: #4f5a50;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -386,28 +399,6 @@ html, body {
 	#nav-links li a {
 	padding: 15px;
 	font-size: 16px;
-	}
-
-	.content-block,
-	.sidebar,
-	.snippets,
-	.content-container {
-	width: 100%;
-	margin: 10px auto;
-	}
-
-	.content-block {
-	margin-bottom: 50px;
-	}
-	.gif-only,
-	.rectangles {
-	width: 100%;
-	padding: 10px;
-	}
-
-	.picture-header {
-	width: 100%;
-	font-size: 1.5rem;
 	}
 
 }
