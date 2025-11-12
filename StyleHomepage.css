@@ -8,7 +8,21 @@ html, body {
   padding: 0;
   height: 100%;
   scroll-behavior: smooth;
-  background-color: #4f5a50; 
+  overflow-x: hidden;
+  background-color: #4f5a50;
+}
+
+body {
+	background-image:
+		repeating-linear-gradient(to right, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size)),
+    	repeating-linear-gradient(to bottom, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size));
+	background-blend-mode: overlay;
+}
+
+:root {
+	--grid-size: 40px;
+	--grid-color: rgba(53, 95, 52, 0.552);
+    --grid-accent: rgba(255,255,255,0.06);
 }
 
 .main-content {
@@ -182,6 +196,63 @@ html, body {
   height: auto;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+  flex: 0 0 300px;
+  max-width: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin: 0 auto;
+}
+
+/*Sidebar*/
+.rectangles {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.snippets {
+  background-color: #a1aa8e;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.snippets p2 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+}
+
+.ad-image {
+  display: block;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  max-height: 140px;       
+  object-fit: cover;      
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.ad-image:hover {
+  transform: scale(1.05);
 }
 
 .dialogue-box {
