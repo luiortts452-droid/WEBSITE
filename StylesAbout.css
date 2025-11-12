@@ -1,10 +1,12 @@
+* {
+  box-sizing: border-box;
+}
 
 html, body {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   margin: 0;
   padding: 0;
-  display: flex;
-  flex-direction: column;
   background-color: #4f5a50;
 }
 
@@ -208,14 +210,15 @@ body {
 /*card */
 .member-card {
   position: relative;
-  width: 800px;
+  width: 300px;
+  height: 400px;
   max-width: 100%;
-  height: 500px;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
   background: #fff;
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  flex-shrink: 0;
 }
 
 .member-card img {
@@ -223,6 +226,7 @@ body {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  animation: floaty 3s ease-in-out infinite;
 }
 
 .member-info {
@@ -231,6 +235,8 @@ body {
   left: 0;
   width: 100%;
   padding: 20px;
+  max-height: 100%;
+  overflow-y: auto;
   background: rgba(0,0,0,0.7);
   color: white;
   opacity: 0;
@@ -251,8 +257,76 @@ body {
   margin: 8px 0;
 }
 
-.member-card {
-  animation: fadeSlide 0.8s ease-out;
+.carousel-track {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  transition: transform 0.6s ease;
+}
+
+.member-card.focused {
+  transform: scale(1.05);
+  z-index: 2;
+  filter: none;
+}
+
+.member-card.blurred {
+  filter: blur(3px) brightness(0.7);
+  transform: scale(0.9);
+  z-index: 1;
+}
+
+/* Mobile toggle support */
+.member-info.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  left: 0;
+  right: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.read-more {
+  background-color: #e59b9b;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.extra-info {
+  max-height: 0;
+  overflow: hidden;
+  font-size: 14px;
+  margin-top: 10px;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.member-info,
+.extra-info {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.member-card,
+.member-info,
+.extra-info {
+  overflow-x: hidden;
+}
+
+.extra-info.visible {
+  max-height: 200px;
+  opacity: 1;
+  max-height: 300px; /* or auto */
+  opacity: 1;
 }
 
 @keyframes fadeSlide {
@@ -266,30 +340,9 @@ body {
   }
 }
 
-.member-card img {
-  animation: floaty 3s ease-in-out infinite;
-}
-
 @keyframes floaty {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
-}
-
-@media (max-width: 768px) {
-  .member-card {
-    height: auto;
-    aspect-ratio: 3 / 2; 
-  }
-
-  .member-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover; 
-  }
-
-.bubble {
-  display: none;
-}
 }
 
 @media (min-width: 769px) {
@@ -299,33 +352,7 @@ body {
     pointer-events: auto;
   }
 }
-.member-card .member-info.visible {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-  pointer-events: auto;
-}
 
-.toggle-btn {
-  position: relative;
-  margin: 10px auto;
-  display: block;
-  background-color: #e59b9b;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 6px;
-  cursor: pointer;
-  z-index: 2;
-  position: static;
-}
-
-@media (min-width: 769px) {
-  .toggle-btn {
-    display: none;
-  }
-}
 
 /* footer */
 .footer {
@@ -377,10 +404,53 @@ body {
     font-size: 14px;
     padding: 8px 12px;
   }
+
+  .member-card {
+    width: 70%;
+    max-width: 220px;
+    height: 200px;
+}
 }
 
 @media (max-width: 768px) {
-    .footer {
+  .member-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+    height: 100%;
+  }
+
+  .bubble {
+    display: none;
+  }
+
+  .carousel-track {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .member-card {
+    flex: 0 0 auto;     
+    scroll-snap-align: center;
+    width: 70%;
+    max-width: 250px;
+    height: 350px;
+    margin: 0 10px;
+    transform: none;
+    filter: none;
+  }
+
+  .read-more {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer {
     flex-direction: column;
     align-items: center;
     gap: 20px;
@@ -425,15 +495,7 @@ body {
     padding: 15px;
     font-size: 16px;
   } 
-
-  .member-info.visible {
-    left: 0;
-    right: 0;
-    width: 100%;
-    box-sizing: border-box;
-    padding-left: 16px;
-    padding-right: 16px;
-} }
+}
 
   /*bubble */
 .floating-bg {
