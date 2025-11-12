@@ -26,19 +26,21 @@
         <li><a href="NSTP.html"><span class="firsttext">NSTP EVENTS</span></a></li>
         <li><a href="PURPOSIVE.html"><span class="firsttext">PURPOSIVE COMMUNICATION</span></a></li>
         <li><a href="Pathfit.html"><span class="firsttext">PATHFIT ACTIVITIES</span></a></li>
-        <li><a href="Moments.html"><span class="firsttext">TAMTECH MOMENTS</span></a></li>
-        <li><a href="About Us.html"><span class="firsttext">ABOUT US</span></a></li>
+        <li><a href="Moments.html"><span class="firsttext">MOMENTS TAMTECH</span></a></li>
+        <li><a href="About Us.html"><span class="firsttext"> LEARN ABOUT US</span></a></li>
       </ul>
     </nav>
 
      <div class="carousel-container">
-  <div class="member-card" id="member-card"></div>
+      <div class="carousel-container">
+  <div class="carousel-track"></div>
   <div class="arrow-group">
     <button class="arrow left" onclick="prevMember()">&#10094;</button>
     <button class="arrow right" onclick="nextMember()">&#10095;</button>
   </div>
-</div>
-        </div>
+      </div>
+     </div>
+        
         
 <div class="floating-bg">
   <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
@@ -56,75 +58,76 @@
   </div>
 
   <!-- Script -->
-  <script>
-    function toggleMenu() {
-      const navList = document.getElementById('nav-links');
-      if (navList) navList.classList.toggle('active');
-    }
-
-  let currentIndex = 0;
-  const members = [
-    { name: "TAMTECH", role: "Developer", bio: "Group of IT students", img: "images/homepage_sketch.png" },
-    { name: "Lance", role: "", Funfact: "Hi! I’m Lance Miguel A. Ramos, but you can just call me Lance. I’m currently studying Bachelor of Science in Information Technology at FEU Roosevelt Marikina. I’ve been cooking for about six years now. I started learning when I was 12 years old because my parents were always busy with work, and I didn’t want them to worry about me when they got home. Eventually, cooking became my way of showing love and care for the people around me. I also enjoy baking! I’m still learning, though I’ve been watching videos lately to pick up new tips and try out different recipes. After I bake, I always share what I make with my siblings and parents. Seeing them enjoy my food makes me really happy. Aside from cooking and baking, I also like watching movies and playing games during my free time. Since I’m an IT student, I find it fun to see how technology plays a big role in gaming and even in the digital content I watch. It inspires me to learn more about how tech connects to everyday things I enjoy.", img: "images/Lance-aboutus.jpg" },
-    { name: "Ann", role: "Main Character", Funfact: "The name's Gabrielle Ann P. Calderon, you can call me Ann! I am an artist who's currently a Bachelor of Science in Information and Technology student at FEU Roosevelt Marikina. I've been an artist for almost 9 years. I've always loved being able to create artworks that express my emotions and my mind, even if it's merely for the aesthetics. I started my journey here as an IT student this year. The first semester allowed me to grow even more as a person. I'm more confident about expressing my ideas than i was before, though I still get too nervous from time to time. In my spare time, I like to create new artworks, watch movies, and sometimes I even play online games as a way to hang out and catch up with my friends. Also, I can perform a full 360-degree twist with my hand! ", img: "images/Ann-aboutus.jpg" },
-    { name: "Claire", role: "Developer", bio: "Loves To Take Pictures", img: "images/claire-aboutus.jpg" },
-    { name: "Lui", role: "Asset", Funfact:"I’m Lui Andre Ortega, a Bachelor of Science in Information Technology student. I’ve always been passionate about gaming, whether it’s the thrill of fast-paced FPS matches, the emotional depth of solo story games, or the realistic driving experience of car simulators. Gaming lets me explore different worlds and challenges, which inspires my curiosity in technology and design. Outside the screen, I love cycling, it’s my way to relax, clear my mind, and enjoy the outdoors. I’m also a big fan of Formula 1, especially cheering for Red Bull Racing and my favorite driver, Max Verstappen. In esports, I look up to Faker from T1 for his skill, discipline, and legacy in gaming. And when it comes to music, Tyler, the Creator is one of my top inspirations. I really enjoy his creativity and unique style. All these interests keep me motivated, inspired, and always excited to learn new things both in and out of IT", img: "images/lui-aboutus.jpg" },
-    { name: "Thomas", role: "Developer", bio: "Loves To Take Pictures Loves To Take Pictures Loves To Take Pictures...", img: "images/Thomas-aboutus.jpg" }
-  ];
-
-  const visibilityStates = new Array(members.length).fill(false);
-
-function updateCard() {
-  const container = document.querySelector('.carousel-container');
-  const card = document.getElementById("member-card");
-  card.style.opacity = 0;
-
-  setTimeout(() => {
-    const member = members[currentIndex];
-    const isVisible = visibilityStates[currentIndex];
-
-    card.innerHTML = `
-      <img src="${member.img}" alt="${member.name}">
-      <div class="member-info ${isVisible ? "visible" : ""}">
-        <h3>${member.name}</h3>
-        <p>${member.role}</p>
-        <p>${member.Funfact}</p>
-      </div>
-    `;
-
-    // Create button outside the card
-    let existingBtn = document.querySelector('.toggle-btn');
-    if (existingBtn) existingBtn.remove();
-
-    const button = document.createElement('button');
-    button.className = 'toggle-btn';
-    button.textContent = isVisible ? "Hide Info" : "Show Info";
-    container.insertBefore(button, card);
-
-    const info = card.querySelector('.member-info');
-
-    button.addEventListener('click', () => {
-      visibilityStates[currentIndex] = !visibilityStates[currentIndex];
-      info.classList.toggle('visible');
-      button.textContent = info.classList.contains('visible') ? "Hide Info" : "Show Info";
-    });
-
-    card.style.opacity = 1;
-  }, 300);
+<script>
+function toggleMenu() {
+  const navLinks = document.getElementById("nav-links");
+  navLinks.classList.toggle("active");
 }
 
+const members = [
+  { name: "Ann", role: "Developer", bio: "The name's Gabrielle Ann P. Calderon, you can call me Ann! I am an artist who's currently a Bachelor of Science in Information and Technology student at FEU Roosevelt Marikina. I've been an artist for almost 9 years. I've always loved being able to create artworks that express my emotions and my mind, even if it's merely for the aesthetics. I started my journey here as an IT student this year. The first semester allowed me to grow even more as a person. I'm more confident about expressing my ideas than i was before, though I still get too nervous from time to time.", img: "images/Ann-aboutus.jpg" },
+  { name: "Claire", role: "Developer", bio: "I'm Claire Princess B. Arcino, but you can call me Claire. I'm a first-year BSIT student at Far Eastern University Roosevelt Marikina. I chose BSIT because two of my siblings are BSIT graduates, and I really want to explore the world of technology. I want to learn more about how technology works, especially as our world continues to evolve and become more advanced. I'm also into crafts, I love how creativity allows you to make things from scratch, and I hope to do the same with programming. This first semester is helping me learn and slowly progress.", img: "images/claire-aboutus.jpg" },
+  { name: "Lance", role: "Developer", bio: "Hi! I’m Lance Miguel A. Ramos, a first-year BSIT student at Far Eastern University Roosevelt. I’ve always been fascinated by how technology works, which is why I chose to pursue Information Technology. I’m excited to dive deeper into programming and tech development, exploring new ideas, solving problems, and bringing my code to life. As a proud Tamaraw, I’m eager to grow not just as a student, but as someone who can use technology to make a positive impact.", img: "images/Lance-aboutus.jpg" },
+  { name: "Lui", role: "Developer", bio: "I’m Lui Andre Ortega, a first year BSIT Section 1 student at Far Eastern University. As a proud Tamaraw, I’m really excited to start my college journey and learn more about codes. I’ve always been interested in computers and how they work, so studying IT feels like a good path for me. I want to get better at programming and learn new languages that can help me in the future. Being part of FEUR inspires me to do my best, meet new people, and enjoy every step of the learning experience.", img: "images/lui-aboutus.jpg" },
+  { name: "Thomas", role: "Developer", bio: "Loves to take pictures", img: "images/Thomas-aboutus.jpg" }
+];
 
-  function nextMember() {
-    currentIndex = (currentIndex + 1) % members.length;
-    updateCard();
-  }
+let currentIndex = 0;
 
-  function prevMember() {
-    currentIndex = (currentIndex - 1 + members.length) % members.length;
-    updateCard();
-  }
+function updateCard() {
+  const track = document.querySelector('.carousel-track');
+  track.innerHTML = '';
 
-  window.onload = updateCard;
-  </script>
+  const prevIndex = (currentIndex - 1 + members.length) % members.length;
+  const nextIndex = (currentIndex + 1) % members.length;
+  const indices = [prevIndex, currentIndex, nextIndex];
+
+  indices.forEach((i) => {
+    const member = members[i];
+    const card = document.createElement('div');
+    card.className = 'member-card ' + (i === currentIndex ? 'focused' : 'blurred');
+    card.innerHTML = `
+      <img src="${member.img}" alt="${member.name}">
+      <div class="member-info">
+        <h3>${member.name}</h3>
+        <p>${member.role}</p>
+        <button class="read-more">Read More</button>
+        <div class="extra-info">${member.bio}</div>
+      </div>
+    `;
+    track.appendChild(card);
+  });
+  attachCardListeners();
+}
+
+function attachCardListeners() {
+  document.querySelectorAll('.read-more').forEach(btn => {
+    btn.onclick = () => {
+      const extra = btn.nextElementSibling;
+      extra.classList.toggle('visible');
+      btn.textContent = extra.classList.contains('visible') ? 'Hide' : 'Read More';
+    };
+  });
+
+  document.querySelectorAll('.member-card img').forEach(img => {
+    img.onclick = () => {
+      const infoBox = img.nextElementSibling;
+      infoBox.classList.toggle('visible');
+    };
+  });
+}
+
+function nextMember() {
+  currentIndex = (currentIndex + 1) % members.length;
+  updateCard();
+}
+
+function prevMember() {
+  currentIndex = (currentIndex - 1 + members.length) % members.length;
+  updateCard();
+}
+
+window.onload = updateCard;
+</script>
 </body>
 </html>
