@@ -174,7 +174,7 @@ body {
   overflow: hidden;
 }
 
-.snippets p2 {
+.snippets p {
   margin: 0 0 10px;
   font-size: 18px;
   font-weight: bold;
@@ -286,14 +286,6 @@ body {
   font-size: 20px;
   font-weight: bold;
   text-align: center;
-}
-
-.description p2 {
-  display: block;
-  margin: 10px 0;
-  font-size: 15px;
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: justify;
 }
 
 /*Reaction & Comments*/
