@@ -37,12 +37,14 @@
       <div class="main-column">
 <!-- Post 1 -->
         <div class="content-block">
-          <figure>
             <h2 class="heading-dramatic">SINAG TAMARAW CONCERT!</h2>
-            <p2 class="text-body">October 14, 2025</p2>
+            <figure>
             <video class="responsive-video" controls preload="none" poster="images/sinag_concert_thumbnail.png">
                <source src="videos/SINAGCONCERT.mp4" type="video/mp4">
-            </video>
+               </video>
+          <figcaption>
+            <p class="text-body">October 14, 2025</p>
+            </figcaption>
           </figure>
           <div class="description">
             <p>Highlight Of The Year 2025</p>
@@ -74,13 +76,15 @@
 
 <!-- Post 2 -->
         <div class="content-block">
-          <figure>
             <h2 class="heading-dramatic">SINAG TAMARAW HALLOWEEN!</h2>
-            <p2 class="text-body">October 29, 2025</p2>
+            <figure>
             <video class="responsive-video" controls preload="none" poster="images/halloween_thumbnail.png">
-               <source src="videos/HALLOWEEN.mp4" type="video/mp4">
-            </video>
-          </figure>
+            <source src="videos/HALLOWEEN.mp4" type="video/mp4">
+          </video>
+          <figcaption>
+            <p class="text-body">October 29, 2025</p>
+            </figcaption>
+            </figure>
           <div class="description">
             <p>Be Creative</p>
             <p class="text-body">This Sinag Tamaraw Halloween was so amazing. where people dress up amazingly. This Halloween shows people's creativity.</p>
@@ -111,13 +115,15 @@
 
 <!-- Post 3 -->
          <div class="content-block">
-          <figure>
             <h2 class="heading-dramatic">SINAG TAMARAW SPORTS!</h2>
-            <p2 class="text-body">October 29 - 30, 2025</p2>
+            <figure>
             <video class="responsive-video" controls preload="none" poster="images/sinag_sports_thumbnail.png">
                <source src="videos/sinag_sports.mp4" type="video/mp4">
-            </video>
-          </figure>
+               </video>
+          <figcaption>
+            <p class="text-body">October 29 - 30, 2025</p>
+            </figcaption>
+            </figure>
           <div class="description">
             <p>Champions Keep Playing No Matter What.</p>
             <p class="text-body">This Sinag Tamaraw sports really went all out. All the athletes really show their love for sports. They really want to win to represent FEU Roosevelt, Marikina.</p>
@@ -148,11 +154,11 @@
 
 <!-- Post 4 -->
          <div class="content-block">
-          <figure>
             <h2 class="heading-dramatic">FEUR MIDTERM</h2>
-            <p2 class="text-body">September 21, 2025</p2>
+            <figure>
             <video class="responsive-video" controls preload="none" poster="images/header_feur.png">
                <source src="videos/feur_midterms.mp4" type="video/mp4">
+            <p class="text-body">September 21, 2025</p>
             </video>
           </figure>
           <div class="description">
@@ -185,10 +191,11 @@
 
 <!-- Post 5 -->
         <div class="content-block">
-          <figure>
+          
             <h2 class="heading-dramatic">Responsible and Ethical Use of Generative Artificial Intelligence</h2>
-            <p2 class="text-body">October 1, 2025</p2>
+            <figure>
             <img src="images/Artificial_intelligence.jpg" alt="AI">
+            <p class="text-body">October 1, 2025</p>
           </figure>
           <div class="description">
             <p>Know How AI Works</p>
@@ -220,10 +227,10 @@
 
 <!-- Post 6 -->
         <div class="content-block">
-          <figure>
             <h2 class="heading-dramatic">How netiquette affects learning</h2>
-            <p2 class="text-body">July 30, 2025</p2>
+            <figure>
             <img src="images/how_etiquette_affects.jpg" alt="Netiquette">
+            <p class="text-body">July 30, 2025</p>
           </figure>
           <div class="description">
             <p>Learn Your Netiquette Everyone</p>
@@ -255,10 +262,10 @@
 
 <!-- Post 7 -->
         <div class="content-block">
-          <figure>
             <h2 class="heading-dramatic">Share the importance of being aware of your digital footprint.</h2>
-            <p2 class="text-body">July 30, 2025</p2>
+            <figure>
             <img src="images/digital_footprint.jpg" alt="digital footprint">
+            <p class="text-body">July 30, 2025</p>
           </figure>
           <div class="description">
             <p> Be Aware Of Your Digital Footprint.</p>
@@ -293,7 +300,7 @@
       <div class="sidebar">
         <div class="rectangles">
           <div class="snippets">
-            <p2>Click Me!</p2>
+            <p>Click Me!</p>
             <a href="https://youtu.be/4eLOyV0oXN8?si=qAk4pS7Xv3Tv3k6w" target="_blank">
               <img src="images/Tams_Journey_ad.png" alt="Ad Banner" class="ad-image">
             </a>
@@ -398,26 +405,6 @@
       toggleBtn.addEventListener('click', () => {
         commentBox.classList.toggle('open');
       });
-    });
-
-    const popupImages = document.querySelectorAll('.popup-image');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.querySelector('.lightbox-img');
-    const closeBtn = document.querySelector('.close');
-
-    popupImages.forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-      });
-    });
-
-    closeBtn.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
-
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) lightbox.style.display = 'none';
     });
     
        /*to lazy load the images in the gallery to reduce the lag*/
