@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TamTech Journey</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Stylecontact.css">
+  <link rel="icon" type="image/x-icon" href="images/website icon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="main-content">
+<div class="header-image">
+      <div id="header">
+        <h1>CONTACT US</h1>
+      </div>
+    </div>
+ <!-- Navigation -->
+    <nav id="navigation">
+      <div class="logo">
+        <a href="HOMEPAGE.html"><span>TAMTECH</span></a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+      <ul id="nav-links">
+        <li><a href="FEUR.html"><span class="firsttext">FEUR EVENTS</span></a></li>
+        <li><a href="NSTP.html"><span class="firsttext">NSTP EVENTS</span></a></li>
+        <li><a href="PURPOSIVE.html"><span class="firsttext">PURPOSIVE COMMUNICATION</span></a></li>
+        <li><a href="Pathfit.html"><span class="firsttext">PATHFIT ACTIVITIES</span></a></li>
+        <li><a href="Moments.html"><span class="firsttext">MOMENTS TAMTECH</span></a></li>
+        <li><a href="About Us.html"><span class="firsttext">LEARN ABOUT US</span></a></li>
+      </ul>
+    </nav>
+
+<section class="contact">
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="gif-box">
+          <img src="images/contact us - gif.gif" />
+      </div>
+      <div class="info-text">
+        <h3><i class="fas fa-map-marker-alt"></i> ADDRESS</h3>
+        <p>FEU Roosevelt Marikina</p>
+          <h3><i class="fas fa-envelope"></i> EMAIL</h3>
+        <p>tamtech51@gmail.com</p>
+        <div class="click-me">
+        <button id="music-toggle">TAMTECH</button>
+        <img src="images/heart.png" class="heart" />
+        <audio id="bg-music" src="videos/sound.mp3" loop></audio>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<div class="footer">
+      <a href="HOMEPAGE.html" class="links">Home</a>
+      <a href="About Us.html" class="links">About Us</a>
+      <a href="contact us.html" class="links">Contact Us</a>
+    </div>
+
+<script>
+  function toggleMenu() {
+  const navList = document.getElementById('nav-links');
+  if (navList) navList.classList.toggle('active');
+  }
+  const button = document.getElementById('music-toggle');
+  const audio = document.getElementById('bg-music');
+  const heart = document.querySelector('.heart');
+
+  let isPlaying = false;
+
+  button.addEventListener('click', () => {
+    if (isPlaying) {
+      audio.pause();
+      button.textContent = 'TAMTECH';
+    } else {
+      audio.play();
+      button.textContent = 'LOVE';
+
+      // Trigger heart animation
+      heart.style.animation = 'pulse 0.6s ease';
+      heart.style.opacity = '1';
+
+      // Reset animation after it finishes
+      setTimeout(() => {
+        heart.style.animation = '';
+        heart.style.opacity = '0';
+      }, 600);
+    }
+
+    isPlaying = !isPlaying;
+  });
+</script>
+</body>
+</html>
