@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ABOUT US</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content = "width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="StylesAbout.css">
+        <link rel="icon" type="image/x-icon" href="images/website_icon.png">
+    </head>
+    <body>
+        <!--navigation bar-->
+        <div class = "main-content">
+          <div class="header-image">
+              <div id="header">
+                  <h1>ABOUT US</h1>
+              </div>
+          </div>
+
+          <nav id="navigation">
+            <div class="logo">
+              <a href="HOMEPAGE.html"><span>TAMTECH</span></a>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            <ul id="nav-links">
+              <li><a href="FEUR.html"><span class="firsttext">FEUR EVENTS</span></a></li>
+              <li><a href="NSTP.html"><span class="firsttext">NSTP EVENTS</span></a></li>
+              <li><a href="PURPOSIVE.html"><span class="firsttext">PURPOSIVE COMMUNICATION</span></a></li>
+              <li><a href="Pathfit.html"><span class="firsttext">PATHFIT ACTIVITIES</span></a></li>
+              <li><a href="Moments.html"><span class="firsttext">TAMTECH MOMENTS</span></a></li>
+              <li><a href="About_Us.html"><span class="firsttext"> LEARN ABOUT US</span></a></li>
+            </ul>
+          </nav>
+
+          <div class="carousel-container">
+            <div class="carousel-container">
+              <div class="carousel-track"></div>
+              <div class="arrow-group">
+                <button class="arrow left" onclick="prevMember()">&#10094;</button>
+                <button class="arrow right" onclick="nextMember()">&#10095;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+  <div class="floating-bg">
+    <div class="bubble" style="left: 10%; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 30%; animation-delay: 2s;"></div>
+    <div class="bubble" style="left: 50%; animation-delay: 4s;"></div>
+    <div class="bubble" style="left: 70%; animation-delay: 6s;"></div>
+    <div class="bubble" style="left: 90%; animation-delay: 8s;"></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <a href="HOMEPAGE.html" class="links">Home</a>
+    <a href="About_Us.html" class="links">About Us</a>
+    <a href="contact_us.html" class="links">Contact Us</a>
+  </div>
+
+  <!-- Script -->
+<script>
+function toggleMenu() {
+  const navLinks = document.getElementById("nav-links");
+  navLinks.classList.toggle("active");
+}
+
+const members = [
+  { name: "TamTech", role: "Group of Developers", bio: " We are the TamTech. A first-year BSIT at Far Eastern University Roosevelt, Marikina. We learn to grow with teamwork, resilience, and communication. FEUR Marikina also helps us grow and learn a lot of things.", img: "images/homepage_sketch.png" },
+  { name: "Ann", role: "Developer", bio: "The name's Gabrielle Ann P. Calderon, you can call me Ann! I am an artist who's currently a Bachelor of Science in Information and Technology student at FEU Roosevelt Marikina. I've been an artist for almost 9 years. I've always loved being able to create artworks that express my emotions and my mind, even if it's merely for the aesthetics. I started my journey here as an IT student this year. The first semester allowed me to grow even more as a person. I'm more confident about expressing my ideas than i was before, though I still get too nervous from time to time.", img: "images/Ann-aboutus.jpg" },
+  { name: "Claire", role: "Developer", bio: "I'm Claire Princess B. Arcino, but you can call me Claire. I'm a first-year BSIT student at Far Eastern University Roosevelt Marikina. I chose BSIT because two of my siblings are BSIT graduates, and I really want to explore the world of technology. I want to learn more about how technology works, especially as our world continues to evolve and become more advanced. I'm also into crafts, I love how creativity allows you to make things from scratch, and I hope to do the same with programming. This first semester is helping me learn and slowly progress.", img: "images/claire-aboutus.jpg" },
+  { name: "Lance", role: "Developer", bio: "Hi! I’m Lance Miguel A. Ramos, a first-year BSIT student at Far Eastern University Roosevelt. I’ve always been fascinated by how technology works, which is why I chose to pursue Information Technology. I’m excited to dive deeper into programming and tech development, exploring new ideas, solving problems, and bringing my code to life. As a proud Tamaraw, I’m eager to grow not just as a student, but as someone who can use technology to make a positive impact.", img: "images/Lance-aboutus.jpg" },
+  { name: "Lui", role: "Developer", bio: "I’m Lui Andre Ortega, a first year BSIT Section 1 student at Far Eastern University. As a proud Tamaraw, I’m really excited to start my college journey and learn more about codes. I’ve always been interested in computers and how they work, so studying IT feels like a good path for me. I want to get better at programming and learn new languages that can help me in the future. Being part of FEUR inspires me to do my best, meet new people, and enjoy every step of the learning experience.", img: "images/LUIimage.jpg" },
+  { name: "Thomas", role: "Developer", bio: "My name is Thomas Gabriel G. Peña, a first-year Bachelor of Science in Information Technology (BSIT) student at Far Eastern University. As a proud Tamaraw, I’m excited to be part of FEU’s vibrant community that values innovation, excellence, and growth. My love for computers, and playing around with programming languages is what set me to this path, to learn, to master, and to inspire.", img: "images/Thomas-aboutus.jpg" }
+];
+
+let currentIndex = 0;
+
+function updateCard() {
+  const track = document.querySelector('.carousel-track');
+  track.innerHTML = '';
+
+  const prevIndex = (currentIndex - 1 + members.length) % members.length;
+  const nextIndex = (currentIndex + 1) % members.length;
+  const indices = [prevIndex, currentIndex, nextIndex];
+
+  indices.forEach((i) => {
+    const member = members[i];
+    const card = document.createElement('div');
+    card.className = 'member-card ' + (i === currentIndex ? 'focused' : 'blurred');
+    card.innerHTML = `
+      <img src="${member.img}" alt="${member.name}">
+      <div class="member-info">
+        <h3>${member.name}</h3>
+        <p>${member.role}</p>
+        <button class="read-more">Read More</button>
+        <div class="extra-info">${member.bio}</div>
+      </div>
+    `;
+    track.appendChild(card);
+  });
+  attachCardListeners();
+}
+
+function attachCardListeners() {
+  document.querySelectorAll('.read-more').forEach(btn => {
+    btn.onclick = () => {
+      const extra = btn.nextElementSibling;
+      extra.classList.toggle('visible');
+      btn.textContent = extra.classList.contains('visible') ? 'Hide' : 'Read More';
+    };
+  });
+
+  document.querySelectorAll('.member-card img').forEach(img => {
+    img.onclick = () => {
+      const infoBox = img.nextElementSibling;
+      infoBox.classList.toggle('visible');
+    };
+  });
+}
+
+function nextMember() {
+  currentIndex = (currentIndex + 1) % members.length;
+  updateCard();
+}
+
+function prevMember() {
+  currentIndex = (currentIndex - 1 + members.length) % members.length;
+  updateCard();
+}
+
+window.onload = updateCard;
+</script>
+</body>
+</html>
