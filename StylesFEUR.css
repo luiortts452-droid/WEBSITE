@@ -12,19 +12,6 @@ html, body {
   background-color: #4f5a50;
 }
 
-body {
-	background-image:
-		repeating-linear-gradient(to right, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size)),
-    	repeating-linear-gradient(to bottom, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size));
-	background-blend-mode: overlay;
-}
-
-:root {
-	--grid-size: 40px;
-	--grid-color: rgba(53, 95, 52, 0.552);
-    --grid-accent: rgba(255,255,255,0.06);
-}
-
 .main-content {
   flex: 1;
 }
@@ -474,6 +461,7 @@ h3 {
 
 .gallery-contain {
   overflow: hidden;
+  contain: layout style paint;
 }
 
 .gallery {
@@ -482,6 +470,7 @@ h3 {
   height: 60vmin;
   display: flex;
   gap: 5px;
+  contain: layout style;
 }
 
 .gallery img {
@@ -492,11 +481,13 @@ h3 {
   overflow: hidden;
   cursor: pointer;
   border-radius: 30px;
-  transition: all .3s;
+  transition: flex .5s ease;
+  contain: paint;
 }
 
 .gallery img:hover {
   flex: 8;
+  will-change: flex;
 }
 
 /*Tablet & Mobile*/
