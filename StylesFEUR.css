@@ -11,19 +11,6 @@ html, body {
   background-color: #4f5a50;
 }
 
-body {
-	background-image:
-		repeating-linear-gradient(to right, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size)),
-    	repeating-linear-gradient(to bottom, var(--grid-color) 0, var(--grid-color) 1px, transparent 1px, transparent var(--grid-size));
-	background-blend-mode: overlay;
-}
-
-:root {
-	--grid-size: 40px;
-	--grid-color: rgba(53, 95, 52, 0.552);
-    --grid-accent: rgba(255,255,255,0.06);
-}
-
 .video-wrapper {
   position: relative;
   width: 100%;
